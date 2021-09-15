@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @union.name %>
+</p>
+
+<p>
+  <strong>Members:</strong>
+  <%= @union.members %> (<%= @union.players.count %>)
+</p>
+
+<p>
+  <strong>Prosperity:</strong>
+  <%= @union.prosperity %> (<%= @union.players.sum {|p| p.prosperity } %>)
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @union.region %>
+</p>
+
+<p>
+  <strong>Cities:</strong>
+  <%= @union.cities %>
+</p>
+
+<%= link_to 'Edit', edit_union_path(@union) %> |
+<%= link_to 'Back', unions_path %>

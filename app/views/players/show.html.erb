@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @player.name %>
+</p>
+
+<p>
+  <strong>X:</strong>
+  <%= @player.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @player.y %>
+</p>
+
+<p>
+  <strong>Prosperity:</strong>
+  <%= @player.prosperity %>
+</p>
+
+<p>
+  <strong>Activeness:</strong>
+  <%= @player.activeness %>
+</p>
+
+<p>
+  <strong>Kills:</strong>
+  <%= @player.kills %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @player.status %>
+</p>
+
+<p>
+  <strong>Union:</strong>
+  <%= link_to @player.union.name, @player.union %>
+</p>
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
