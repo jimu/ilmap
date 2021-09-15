@@ -2,7 +2,7 @@
 
 <h1>Unions</h1>
 
-<table>
+<table class=table>
   <thead>
     <tr>
       <th>Name</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @unions.each do |union| %>
       <tr>
-        <td><%= union.name %></td>
+        <td><%= link_to union.name, union %></td>
         <td><%= union.members %></td>
         <td><%= union.prosperity %></td>
         <td><%= union.region %></td>
