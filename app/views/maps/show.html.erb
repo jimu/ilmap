@@ -99,9 +99,7 @@
 
     ctx.beginPath();
     ctx.ellipse(<%= p.x * 400 / 10000 %>,<%= 400 - p.y * 400 / 10000 %>, r,r,0,0,360);
-    ctx.strokeStyle = 'black';
-    ctx.fillStyle = '<%= p.union_id == 1 ? "green" : "red" %>';
+    ctx.fillStyle = '<%= p.union.color %>';
     ctx.fill();
-    ctx.stroke();
   <% end %>
 </script>

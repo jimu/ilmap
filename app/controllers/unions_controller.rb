@@ -64,6 +64,6 @@ class UnionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def union_params
-      params.require(:union).permit(:name, :members, :prosperity, :region, :cities)
+      params.require(:union).permit(:name, :members, :prosperity, :region, :cities, :color)
     end
 end
