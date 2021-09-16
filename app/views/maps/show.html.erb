@@ -1,0 +1,107 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @map.name %>
+</p>
+
+<p>
+  <strong>Startx:</strong>
+  <%= @map.startx %>
+</p>
+
+<p>
+  <strong>Starty:</strong>
+  <%= @map.starty %>
+</p>
+
+<p>
+  <strong>Endx:</strong>
+  <%= @map.endx %>
+</p>
+
+<p>
+  <strong>Endy:</strong>
+  <%= @map.endy %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @map.height %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @map.width %>
+</p>
+
+<p>
+  <strong>Min activeness:</strong>
+  <%= @map.min_activeness %>
+</p>
+
+<p>
+  <strong>Max activeness:</strong>
+  <%= @map.max_activeness %>
+</p>
+
+<p>
+  <strong>Min prosperity:</strong>
+  <%= @map.min_prosperity %>
+</p>
+
+<p>
+  <strong>Max prosperity:</strong>
+  <%= @map.max_prosperity %>
+</p>
+
+<p>
+  <strong>Unions:</strong>
+  <ul>
+  <% @map.unions.each do |u| %>
+    <li><%= link_to u.name, u %>
+  <% end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_map_path(@map) %> |
+<%= link_to 'Back', maps_path %>
+
+<hr>
+<div class="border: solid 1px">
+  <canvas id=canvas height=400 width=400></canvas>
+</div>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx    = canvas.getContext('2d');
+  const scale  = 400 / 10000;
+
+  ctx.strokeStyle = 'black';
+  //ctx.fill()
+
+  ctx.lineWidth   = 1;
+  ctx.beginPath();
+  //ctx.rect(0,0,200,200);
+  ctx.ellipse(200,200,199,199,0,0,360);
+  ctx.stroke();
+
+  ctx.fillStyle = 'black';
+  ctx.beginPath();
+  ctx.ellipse(200,200,5,5,0,0,360);
+  ctx.stroke();
+
+<% puts "hi count=#{Player.all.count}" %>
+  <% Player.all.each do |p| %>
+    <% puts "#{p.x},#{p.y}" %>
+    var r = <%= (p.prosperity + 1000) / 1000 %>;
+
+    ctx.beginPath();
+    ctx.ellipse(<%= p.x * 400 / 10000 %>,<%= 400 - p.y * 400 / 10000 %>, r,r,0,0,360);
+    ctx.strokeStyle = 'black';
+    ctx.fillStyle = '<%= p.union_id == 1 ? "green" : "red" %>';
+    ctx.fill();
+    ctx.stroke();
+  <% end %>
+</script>

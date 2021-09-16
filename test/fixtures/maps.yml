@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  startx: 1
+  starty: 1
+  endx: 1
+  endy: 1
+  height: 1
+  width: 1
+  min_activeness: 1
+  max_activeness: 1
+  min_prosperity: 1
+  max_prosperity: 1
+
+two:
+  name: MyString
+  startx: 1
+  starty: 1
+  endx: 1
+  endy: 1
+  height: 1
+  width: 1
+  min_activeness: 1
+  max_activeness: 1
+  min_prosperity: 1
+  max_prosperity: 1

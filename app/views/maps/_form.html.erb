@@ -1,0 +1,72 @@
+<%= form_with(model: map) do |form| %>
+  <% if map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(map.errors.count, "error") %> prohibited this map from being saved:</h2>
+
+      <ul>
+        <% map.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :startx %>
+    <%= form.number_field :startx %>
+  </div>
+
+  <div class="field">
+    <%= form.label :starty %>
+    <%= form.number_field :starty %>
+  </div>
+
+  <div class="field">
+    <%= form.label :endx %>
+    <%= form.number_field :endx %>
+  </div>
+
+  <div class="field">
+    <%= form.label :endy %>
+    <%= form.number_field :endy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.number_field :width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_activeness %>
+    <%= form.number_field :min_activeness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_activeness %>
+    <%= form.number_field :max_activeness %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_prosperity %>
+    <%= form.number_field :min_prosperity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_prosperity %>
+    <%= form.number_field :max_prosperity %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
