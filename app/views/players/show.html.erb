@@ -40,5 +40,15 @@
   <%= link_to @player.union.name, @player.union %>
 </p>
 
+<p>
+  <strong>Blueprints:</strong>
+  <%= @player.blueprints %>
+</p>
+
+<p>
+  <strong>Attention:</strong>
+  <%= @player.attention %>
+</p>
+
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

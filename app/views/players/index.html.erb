@@ -13,6 +13,8 @@
       <th>Kills</th>
       <th>Status</th>
       <th>Union</th>
+      <th>Blueprints</th>
+      <th>Attention</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,6 +30,8 @@
         <td><%= player.kills %></td>
         <td><%= player.status %></td>
         <td><%= player.union.name %></td>
+        <td><%= player.blueprints %></td>
+        <td><%= player.attention %></td>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>

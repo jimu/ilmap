@@ -51,6 +51,16 @@
     <%= form.collection_select :union_id, Union.all, :id, :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :blueprints %>
+    <%= form.text_field :blueprints %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attention %>
+    <%= form.datetime_local_field :attention %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
